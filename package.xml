@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.6.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Net_Nmap</name>
+ <channel>pear.php.net</channel>
+ <summary>A simple wrapper class for the Nmap utility</summary>
+ <description>Net_Nmap is a simple interface for Nmap, 
+the free and open source utility for network exploration or security auditing.
+
+Net_Nmap can be used to auto discovery hosts and services in your network or simply to parse Nmap XML output.
+
+Note: 
+Requires a Nmap installation on your system.
+Nmap is available from http://nmap.org/</description>
+ <lead>
+  <name>Luca Corbo</name>
+  <user>lucor</user>
+  <email>lucor@ortro.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-04-15</date>
+ <time>20:53:18</time>
+ <version>
+  <release>0.9.9</release>
+  <api>0.9.9</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+ <notes>Initial release</notes>
+ <contents>
+  <dir baseinstalldir="Net" name="/">
+   <file baseinstalldir="Net" md5sum="b29c0845cfd8eb68f25dd58c624c161f" name="docs/LICENSE" role="data" />
+   <file baseinstalldir="Net" md5sum="c9f392b18fe4858ed94fdbe0b9e42ea4" name="docs/README" role="data" />
+   <file baseinstalldir="Net" md5sum="11545ad1578b8353f8b703a163288b58" name="examples/example1.php" role="data" />
+   <file baseinstalldir="Net" md5sum="c2777cd5fc39894621d0db683d9c51cd" name="examples/example2.php" role="data" />
+   <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="examples/example2.xml" role="data" />
+   <file baseinstalldir="Net" md5sum="b3183c33dc2c8e3e9dc88e24a63c9670" name="Nmap/Exception.php" role="php" />
+   <file baseinstalldir="Net" md5sum="56bfd28a46baa24a33191dd0138ff7f5" name="Nmap/Host.php" role="php" />
+   <file baseinstalldir="Net" md5sum="9527208fc4302ed6a77ce11130a50ff7" name="Nmap/Parser.php" role="php" />
+   <file baseinstalldir="Net" md5sum="397993dab656ce44e2dd772fa75f16b9" name="Nmap/Service.php" role="php" />
+   <file baseinstalldir="Net" md5sum="2009883fbca681f18650332f46f9d585" name="tests/NetNmapParseTest.php" role="test" />
+   <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="tests/NetNmapParseTest.xml" role="test" />
+   <file baseinstalldir="Net" md5sum="8d38b007a35ff60ca932c2bc60c7a50d" name="tests/NetNmapScanTest.php" role="test" />
+   <file baseinstalldir="Net" md5sum="647ed23e0128a1f6c0ac6966105594b9" name="tests/test_config.php" role="test" />
+   <file baseinstalldir="Net" md5sum="0433385f7fef3a25bed9b25ea825a80c" name="Nmap.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+   <package>
+    <name>XML_Parser</name>
+    <channel>pear.php.net</channel>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.9.0</release>
+    <api>0.9.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2008-03-07</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>Initial release.</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.1</release>
+    <api>0.9.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2008-03-11</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>Revised release for PEAR Proposal.
+- The escapeshellcmd() is used to escape all data that can be passed to the command line.
+- The $options (associative array) can be passed to the constructor to set runtime properties.
+- The __get and __set methods are used to set properties in the Service object.</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.2</release>
+    <api>0.9.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2008-03-13</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>Revised release for PEAR Proposal.
+- Using PEAR_Exception instead of PEAR_Error
+- Fixed typo in the initialization of $_properties in the Service class</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.3</release>
+    <api>0.9.3</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2008-03-31</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>- replaced is_null($foo) with $foo === null
+- use get and set method for the status property
+- renamed os() to getOS()
+- renamed allOS() to getAllOS()
+- use Exception instead of trigger_error in the Service class.
+- using visibility in all code.
+- Use System::which() to find the nmap binary instead of hardcoding the path into the class.
+- In the examples use count() instead of $object-&gt;count()
+- Use tempnam() instead of md5() in Nmap::scan() to avoid conflicts
+- In Parser.php a link to the nmap xml format docs was added.
+- The parser and the other classes are unit-tested
+- More Shell escaping in Nmap::_createCommandLine() (output file, target)
+- In Nmap::parseXMLOutput() the original PEAR_Error is passed to the exception
+- The package works now on windows
+- The failed to resolve hostnames/IPs are now reported.</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.9</release>
+    <api>0.9.9</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2008-04-15</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>Initial release</notes>
+  </release>
+ </changelog>
+</package>

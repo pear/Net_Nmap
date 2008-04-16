@@ -1,0 +1,12 @@
+A simple wrapper class for the Nmap utility
+
+Net_Nmap is a simple interface for Nmap,
+the free and open source utility for network exploration 
+or security auditing.
+
+Net_Nmap can be used to auto discovery hosts and services 
+in your network or simply to parse Nmap XML output.
+
+Note: 
+Requires a Nmap installation on your system.
+Nmap is available from http://nmap.org/
