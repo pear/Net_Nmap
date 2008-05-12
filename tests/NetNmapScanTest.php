@@ -52,6 +52,8 @@ class NetNmapScanTest extends PHPUnit_Framework_TestCase
     public function testNmapBinaryInPath()
     {
         $nmap = new Net_Nmap();
+        $nmap->enableOptions($GLOBALS['nmap_options']);
+        print_r($GLOBALS['nmap_options']);
         $res = $nmap->scan($this->_target);
         $this->assertEquals(true, $res);
     }

@@ -31,4 +31,9 @@
 //define('NMAP_BINARY', 'C:\Programmi\Nmap\nmap.EXE');
 define('OUTPUT_FILE', '/tmp/testNmapSaveOutputFile1.xml');
 define('NMAP_BINARY', '/usr/local/bin/nmap');
+$nmap_options = array('os_detection' => true,
+                      'service_info' => true,
+                      'port_ranges' => 'U:53,111,137,T:21-25,80,139,8080',
+                      //'all_options' => true
+                      );
 ?>

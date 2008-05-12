@@ -49,7 +49,7 @@ class Net_Nmap
      * Location of the nmap binary
      *
      * @var string  $nmap_path
-     * @see Net_Namp::__construct()
+     * @see Net_Nmap::__construct()
      * @access private
      */
     private $_nmap_binary;
@@ -58,19 +58,10 @@ class Net_Nmap
      * Absolute path to store the Nmap XML output file.
      *
      * @var string
-     * @see Net_Namp::__construct()
+     * @see Net_Nmap::__construct()
      * @access private
      */
     private $_output_file = null;
-
-    /**
-     * Force the OS detection
-     *
-     * @var boolean
-     * @see Net_Namp::__construct()
-     * @access private
-     */
-    private $_os_detection = false;
     
     /**
      * Delete Nmap output file after parsing
@@ -89,6 +80,15 @@ class Net_Nmap
     private $_failed_to_resolve = array();
     
     /**
+     * Nmap option arguments
+     *
+     * @var array
+     * @link http://nmap.org/book/man-briefoptions.html
+     * @access private
+     */
+    private $_nmap_options = array();
+    
+    /**
      * Creates a new Nmap object
      *
      * Available options are:
@@ -98,9 +98,6 @@ class Net_Nmap
      *
      * - string  output_file:  Path to store the Nmap XML output file.
      *                         If not specified, a temporary file is created.
-     * 
-     * - boolean os_detection: Force the OS detection, requires root privileges. 
-     *                         If not specified, defaults to false.
      *
      * @param array $options optional. An array of options used to create the
      *                       Nmap object. All options must be optional and are
@@ -119,10 +116,6 @@ class Net_Nmap
         if (array_key_exists('output_file', $options)) {
             $this->_output_file = (string)$options['output_file'];
         }
-        
-        if (array_key_exists('os_detection', $options)) {
-            $this->_os_detection = (boolean)$options['os_detection'];
-        }
     }
     
     /**
@@ -135,7 +128,6 @@ class Net_Nmap
      */
     private function _createCommandLine($targets)
     {
-        $default_option = ' -A ';
 
         if ($this->_output_file === null) {
              $this->_output_file = tempnam(System::tmpdir(), __CLASS__);
@@ -144,10 +136,7 @@ class Net_Nmap
         }
         
         $cmd  = escapeshellarg($this->_nmap_binary);
-        $cmd .= $default_option;
-        if ($this->_os_detection) {
-            $cmd .= ' -O ';
-        }
+        $cmd .= ' ' . implode(' ', $this->_nmap_options);
         $cmd .= ' -oX ' . escapeshellarg($this->_output_file) . ' ';
         foreach ($targets as $target) {
             $cmd .= escapeshellarg($target) . ' ';
@@ -228,6 +217,55 @@ class Net_Nmap
     public function getFailedToResolveHosts()
     {
         return $this->_failed_to_resolve;
+    }
+    
+    /**
+     * Enable Nmap options
+     * Available nmap options are:
+     * 
+     * - boolean os_detection: Enable the OS detection (-O).
+     * - boolean service_info: Probe open ports to determine 
+     *                         service/version info (-sV)
+     * - string  port_ranges : Port ranges, only scan 
+     *                         specified ports (-p <port ranges>)
+     *                         Ex: 22; 1-65535; U:53,111,137,T:21-25,80,139,8080
+     * - boolean all_options : Enables OS detection and Version detection, 
+     *                         Script scanning and Traceroute (-A)
+     * 
+     * @param array $nmap_options Nmap options to enable
+     * 
+     * @return void
+     * @link http://nmap.org/book/man-briefoptions.html
+     * @throws Net_Nmap_Exception If the option argument is not valid.
+     * @access public
+     */
+    public function enableOptions($nmap_options)
+    {
+        $enable_os_detection = array_key_exists('os_detection', $nmap_options);
+        $enable_service_info = array_key_exists('service_info', $nmap_options);
+        $enable_port_ranges  = array_key_exists('port_ranges', $nmap_options);
+        $enable_all_options  = array_key_exists('all_options', $nmap_options);
+        
+        if ($enable_os_detection && $nmap_options['os_detection']) {    
+            $this->_nmap_options[] = '-O';
+        }
+        if ($enable_service_info && $nmap_options['service_info']) {    
+            $this->_nmap_options[] = '-sV';
+        }
+        if ($enable_port_ranges) {
+            $port_ranges    = $nmap_options['port_ranges'];
+            $allowed_format = '([U,T]\:)*[0-9]+(-[0-9]+)*';
+            
+            $regexp = '/^' . $allowed_format . '(,' . $allowed_format . ')*$/';
+            if (preg_match($regexp, $port_ranges)) {
+                $this->_nmap_options[] = '-p ' . $port_ranges;
+            } else {
+                throw new Net_Nmap_Exception('Port ranges: not valid format.');
+            }  
+        }
+        if ($enable_all_options && $nmap_options['all_options']) {    
+            $this->_nmap_options[] = '-A';
+        }
     }
 }
 ?>

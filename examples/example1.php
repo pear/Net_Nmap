@@ -36,12 +36,20 @@ require_once 'Net/Nmap.php';
 $target = array('127.0.0.1');
 
 $options = array('output_file' => '/your/path/testNmap.xml',
-                 'nmap_binary' => '/usr/local/bin/nmap',
-                 'os_detection' => true);
+                 'nmap_binary' => '/usr/local/bin/nmap');
 
 try {
     $nmap = new Net_Nmap($options);
-
+    
+    //Enable nmap options
+    $nmap_options = array('os_detection' => true,
+                          'service_info' => true,
+                          'port_ranges' => 'U:53,111,137,T:21-25,80,139,8080',
+                          //'all_options' => true
+                          );
+                          
+    $nmap->enableOptions($nmap_options);
+    
     //Scan target
     $res = $nmap->scan($target);
     
