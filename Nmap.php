@@ -29,8 +29,8 @@
  */
 
 require_once 'System.php';
-require_once 'Nmap/Parser.php';
-require_once 'Nmap/Exception.php';
+require_once 'Net/Nmap/Parser.php';
+require_once 'Net/Nmap/Exception.php';
 
 /**
  * Simple wrapper interface for the Nmap utility.
