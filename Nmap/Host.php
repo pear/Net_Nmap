@@ -44,7 +44,6 @@ class Net_Nmap_Host
     /**
      * Status of the Host
      * @var string
-     * @access private
      */
     private $_status;
     
@@ -55,14 +54,12 @@ class Net_Nmap_Host
      *        [ipv4] => Array ([0] => 192.168.1.100
      *                         [1] => 192.168.1.112))
      * @var array
-     * @access private
      */
     private $_addresses = array();
     
     /**
      * Contains all discovered hostnames
      * @var array
-     * @access private
      */
     private $_hostnames = array();
     
@@ -71,14 +68,12 @@ class Net_Nmap_Host
      * and the relative accuracy.
      * Elements are sorted by decreasing accuracy
      * @var array
-     * @access private
      */
     private $_os = array();
     
     /**
      * Contains all discovered Service objects
      * @var ArrayIterator
-     * @access private
      */
     private $_services;
     
@@ -86,7 +81,6 @@ class Net_Nmap_Host
      * Constructor
      *     
      * @return void
-     * @access public
      */
     public function __construct()
     {
@@ -101,7 +95,6 @@ class Net_Nmap_Host
      * @param int    $index The index number of the parameter to obtain
      * 
      * @return string
-     * @access public
      */
     public function getAddress($type = 'ipv4', $index = 0)
     {
@@ -115,7 +108,6 @@ class Net_Nmap_Host
      * @param string $value Address value
      * 
      * @return void
-     * @access public
      */
     public function addAddress($type, $value)
     {
@@ -130,7 +122,6 @@ class Net_Nmap_Host
      * @param int $index The index number of the parameter to obtain
      * 
      * @return string
-     * @access public
      */
     public function getHostname($index = 0)
     {
@@ -146,7 +137,6 @@ class Net_Nmap_Host
      * @param string $value hostaname value
      * 
      * @return void
-     * @access public
      */
     public function addHostname($value)
     {
@@ -159,7 +149,6 @@ class Net_Nmap_Host
      * @param object $service Service object
      * 
      * @return void
-     * @access public
      */
     public function addService($service)
     {
@@ -170,7 +159,6 @@ class Net_Nmap_Host
      * Returns the discovered services
      * 
      * @return ArrayIterator
-     * @access public
      */
     public function getServices()
     {
@@ -184,7 +172,6 @@ class Net_Nmap_Host
      * @param string $name     OS name value
      * 
      * @return void
-     * @access public
      */
     public function addOS($accuracy, $name)
     {
@@ -195,7 +182,6 @@ class Net_Nmap_Host
      * Returns the name of discovered OS with the highest accuracy value.
      * 
      * @return string
-     * @access public
      */
     public function getOS()
     {
@@ -208,7 +194,6 @@ class Net_Nmap_Host
      * All informations are sorted by decreasing accuracy
      * 
      * @return array
-     * @access public
      */
     public function getAllOS()
     {
@@ -221,7 +206,6 @@ class Net_Nmap_Host
      * @param string $status Host status
      * 
      * @return void
-     * @access public
      */
     public function setStatus($status)
     {
@@ -232,7 +216,6 @@ class Net_Nmap_Host
      * Returns the status of the Host
      * 
      * @return string
-     * @access public
      */
     public function getStatus()
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Net_Nmap</name>
  <channel>pear.php.net</channel>
  <summary>A simple wrapper class for the Nmap utility</summary>
@@ -17,21 +17,18 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2008-05-12</date>
- <time>15:06:50</time>
+ <date>2008-10-13</date>
+ <time>12:06:38</time>
  <version>
-  <release>1.0.0beta1</release>
-  <api>1.0.0beta1</api>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
  </version>
  <stability>
-  <release>beta</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
- <notes>- Changed. By default nmap scan is performed without any parameters.
-- Added. The enableOptions() method to Nmap class to set Nmap parameters.
-- Changed. The Os detection flag was removed as option in the constructor.
-- Updated. Tests and examples.</notes>
+ <notes>- Removed the @access tags not necessary in PHP5</notes>
  <contents>
   <dir baseinstalldir="Net" name="/">
    <file baseinstalldir="Net" md5sum="b29c0845cfd8eb68f25dd58c624c161f" name="docs/LICENSE" role="data" />
@@ -40,14 +37,14 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="Net" md5sum="c2777cd5fc39894621d0db683d9c51cd" name="examples/example2.php" role="data" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="examples/example2.xml" role="data" />
    <file baseinstalldir="Net" md5sum="b3183c33dc2c8e3e9dc88e24a63c9670" name="Nmap/Exception.php" role="php" />
-   <file baseinstalldir="Net" md5sum="56bfd28a46baa24a33191dd0138ff7f5" name="Nmap/Host.php" role="php" />
-   <file baseinstalldir="Net" md5sum="9527208fc4302ed6a77ce11130a50ff7" name="Nmap/Parser.php" role="php" />
-   <file baseinstalldir="Net" md5sum="397993dab656ce44e2dd772fa75f16b9" name="Nmap/Service.php" role="php" />
+   <file baseinstalldir="Net" md5sum="38b160083e31fb1b5c2ead115c0a2958" name="Nmap/Host.php" role="php" />
+   <file baseinstalldir="Net" md5sum="160ac48fe8af0c6de3994187e5a79d4f" name="Nmap/Parser.php" role="php" />
+   <file baseinstalldir="Net" md5sum="0e8279f53ef903e56d7af08caded9923" name="Nmap/Service.php" role="php" />
    <file baseinstalldir="Net" md5sum="2009883fbca681f18650332f46f9d585" name="tests/NetNmapParseTest.php" role="test" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="tests/NetNmapParseTest.xml" role="test" />
    <file baseinstalldir="Net" md5sum="0b0b7cad6875a55140903794ef6bb72c" name="tests/NetNmapScanTest.php" role="test" />
    <file baseinstalldir="Net" md5sum="0275854dd7278353fc56b5ab0aadcda7" name="tests/test_config.php" role="test" />
-   <file baseinstalldir="Net" md5sum="f54fab5638a9a305814fe7becadb7790" name="Nmap.php" role="php" />
+   <file baseinstalldir="Net" md5sum="12cdd6b00e76b5c0df397f344a2a1b8b" name="Nmap.php" role="php" />
   </dir>
  </contents>
  <dependencies>
@@ -165,6 +162,19 @@ Nmap is available from http://nmap.org/</description>
 - Added. The enableOptions() method to Nmap class to set Nmap parameters.
 - Changed. The Os detection flag was removed as option in the constructor.
 - Updated. Tests and examples.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2008-10-13</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>- Removed the @access tags not necessary in PHP5</notes>
   </release>
  </changelog>
 </package>

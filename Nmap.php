@@ -50,7 +50,6 @@ class Net_Nmap
      *
      * @var string  $nmap_path
      * @see Net_Nmap::__construct()
-     * @access private
      */
     private $_nmap_binary;
     
@@ -59,7 +58,6 @@ class Net_Nmap
      *
      * @var string
      * @see Net_Nmap::__construct()
-     * @access private
      */
     private $_output_file = null;
     
@@ -67,7 +65,6 @@ class Net_Nmap
      * Delete Nmap output file after parsing
      *
      * @var    string
-     * @access private
      */
     private $_delete_output_file = true;
     
@@ -75,7 +72,6 @@ class Net_Nmap
      * The hostname/IP failed to resolve 
      *
      * @var    array
-     * @access private
      */
     private $_failed_to_resolve = array();
     
@@ -84,7 +80,6 @@ class Net_Nmap
      *
      * @var array
      * @link http://nmap.org/book/man-briefoptions.html
-     * @access private
      */
     private $_nmap_options = array();
     
@@ -103,7 +98,6 @@ class Net_Nmap
      *                       Nmap object. All options must be optional and are
      *                       represented as key-value pairs.
      * 
-     * @access public
      */
     public function __construct(array $options = array())
     {
@@ -123,8 +117,7 @@ class Net_Nmap
      *
      * @param array $targets contains hostnames, IP addresses, networks to scan
      * 
-     * @return string 
-     * @access private
+     * @return string
      */
     private function _createCommandLine($targets)
     {
@@ -157,7 +150,6 @@ class Net_Nmap
      * @return true | PEAR_Error
      * @throws Net_Nmap_Exception If Nmap binary does not exist or 
      *                            the command failed to execute.
-     * @access public
      */
     public function scan($targets)
     {        
@@ -184,8 +176,7 @@ class Net_Nmap
      * @param string $output_file Absolute path of the file to parse (optional)
      *
      * @return ArrayIterator      Returns Hosts Object on success. 
-     * @throws Net_Nmap_Exception If a parsing error occurred. 
-     * @access public
+     * @throws Net_Nmap_Exception If a parsing error occurred.
      */
     public function parseXMLOutput($output_file = null)
     {
@@ -212,7 +203,6 @@ class Net_Nmap
      * Get all the hostnames/IPs failed to resolve during scanning operation
      * 
      * @return Array    Returns array
-     * @access public
      */
     public function getFailedToResolveHosts()
     {
@@ -237,7 +227,6 @@ class Net_Nmap
      * @return void
      * @link http://nmap.org/book/man-briefoptions.html
      * @throws Net_Nmap_Exception If the option argument is not valid.
-     * @access public
      */
     public function enableOptions($nmap_options)
     {

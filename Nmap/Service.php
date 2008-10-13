@@ -54,7 +54,6 @@ class Net_Nmap_Service
      * The list of properties managed by __set and __get methods
      * 
      * @var    array   $_properties
-     * @access private
      */
     private $_properties = array('product' => null,
                                                   'protocol' => null,
@@ -70,7 +69,6 @@ class Net_Nmap_Service
      * 
      * @throws Net_Nmap_Exception If trying to get an undefined properties.
      * @return mixed The value of the object on success
-     * @access private
      */
     private function __get($key)
     {
@@ -93,7 +91,6 @@ class Net_Nmap_Service
      * 
      * @throws Net_Nmap_Exception If trying to set an undefined properties.
      * @return mixed True on success
-     * @access private
      */
     private function __set($key, $value)
     {

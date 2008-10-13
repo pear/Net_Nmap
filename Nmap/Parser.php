@@ -48,7 +48,6 @@ class Net_Nmap_Parser extends XML_Parser
     /**
      * Container for the host objects
      * @var ArrayIterator
-     * @access private
      */
     private $_hosts;
      
@@ -60,7 +59,6 @@ class Net_Nmap_Parser extends XML_Parser
      * @param array    $attribs attributes
      *
      * @return void
-     * @access public
      */
     public function startHandler($parser, $name, $attribs)
     {
@@ -115,7 +113,6 @@ class Net_Nmap_Parser extends XML_Parser
      * @param string   $name   element name
      *
      * @return void
-     * @access public
      */
     public function endHandler($parser, $name)
     {
@@ -137,7 +134,6 @@ class Net_Nmap_Parser extends XML_Parser
      * @param string   $data   data
      * 
      * @return void | true if $data is empty
-     * @access public
      */
     public function cdataHandler($parser, $data)
     {
@@ -151,7 +147,6 @@ class Net_Nmap_Parser extends XML_Parser
      * Get all the discovered hosts
      *
      * @return ArrayIterator The discovered hosts
-     * @access public
      */
     public function getHosts()
     {
