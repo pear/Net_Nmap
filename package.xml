@@ -17,10 +17,10 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2008-10-13</date>
- <time>12:06:38</time>
+ <date>2009-01-27</date>
+ <time>12:15:29</time>
  <version>
-  <release>1.0.0</release>
+  <release>1.0.1</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -28,7 +28,7 @@ Nmap is available from http://nmap.org/</description>
   <api>stable</api>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
- <notes>- Removed the @access tags not necessary in PHP5</notes>
+ <notes>* Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt</notes>
  <contents>
   <dir baseinstalldir="Net" name="/">
    <file baseinstalldir="Net" md5sum="b29c0845cfd8eb68f25dd58c624c161f" name="docs/LICENSE" role="data" />
@@ -53,7 +53,7 @@ Nmap is available from http://nmap.org/</description>
     <min>5</min>
    </php>
    <pearinstaller>
-    <min>1.4.0</min>
+    <min>1.5.4</min>
    </pearinstaller>
    <package>
     <name>XML_Parser</name>
@@ -175,6 +175,19 @@ Nmap is available from http://nmap.org/</description>
    <date>2008-10-13</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
    <notes>- Removed the @access tags not necessary in PHP5</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2009-01-27</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>* Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt</notes>
   </release>
  </changelog>
 </package>
