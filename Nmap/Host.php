@@ -190,7 +190,6 @@ class Net_Nmap_Host
             $too_many_match = 'Too many fingerprints match this host to give specific OS details';
             return $too_many_match;
         }
-        array_multisort($this->_os, SORT_DESC);
         return $this->_os[0]['name'];
     }
     
