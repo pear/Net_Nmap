@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.8.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Net_Nmap</name>
  <channel>pear.php.net</channel>
  <summary>A simple wrapper class for the Nmap utility</summary>
@@ -17,10 +17,10 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2009-01-27</date>
- <time>12:15:29</time>
+ <date>2009-06-16</date>
+ <time>22:54:16</time>
  <version>
-  <release>1.0.1</release>
+  <release>1.0.2</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -28,7 +28,10 @@ Nmap is available from http://nmap.org/</description>
   <api>stable</api>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
- <notes>* Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt</notes>
+ <notes>
+- Fixed. #16268 OS Guess wrong Sort Order
+- Fixed. #16336 Error getting OS if the osmatch tag is not present in the XML
+ </notes>
  <contents>
   <dir baseinstalldir="Net" name="/">
    <file baseinstalldir="Net" md5sum="b29c0845cfd8eb68f25dd58c624c161f" name="docs/LICENSE" role="data" />
@@ -37,13 +40,18 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="Net" md5sum="c2777cd5fc39894621d0db683d9c51cd" name="examples/example2.php" role="data" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="examples/example2.xml" role="data" />
    <file baseinstalldir="Net" md5sum="b3183c33dc2c8e3e9dc88e24a63c9670" name="Nmap/Exception.php" role="php" />
-   <file baseinstalldir="Net" md5sum="38b160083e31fb1b5c2ead115c0a2958" name="Nmap/Host.php" role="php" />
+   <file baseinstalldir="Net" md5sum="e9d9b636fe13abe73c85edfa007aabf0" name="Nmap/Host.php" role="php" />
    <file baseinstalldir="Net" md5sum="160ac48fe8af0c6de3994187e5a79d4f" name="Nmap/Parser.php" role="php" />
    <file baseinstalldir="Net" md5sum="0e8279f53ef903e56d7af08caded9923" name="Nmap/Service.php" role="php" />
+   <file baseinstalldir="Net" md5sum="324372b84a7e5c6296d4433daaa0b68a" name="tests/bug16268.xml" role="test" />
+   <file baseinstalldir="Net" md5sum="c7c1c1a10df2b8c1a076121275e581e3" name="tests/Bug16268Test.php" role="test" />
+   <file baseinstalldir="Net" md5sum="589604fe60eee01bc25e7efd368451b0" name="tests/bug16336.xml" role="test" />
+   <file baseinstalldir="Net" md5sum="5f34f9a5a797282fdab5bf2d943c8391" name="tests/Bug16336Test.php" role="test" />
    <file baseinstalldir="Net" md5sum="2009883fbca681f18650332f46f9d585" name="tests/NetNmapParseTest.php" role="test" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="tests/NetNmapParseTest.xml" role="test" />
    <file baseinstalldir="Net" md5sum="0b0b7cad6875a55140903794ef6bb72c" name="tests/NetNmapScanTest.php" role="test" />
    <file baseinstalldir="Net" md5sum="0275854dd7278353fc56b5ab0aadcda7" name="tests/test_config.php" role="test" />
+   <file baseinstalldir="Net" md5sum="fb6f34b264a85394d1454541ce023d88" name=".project" role="data" />
    <file baseinstalldir="Net" md5sum="12cdd6b00e76b5c0df397f344a2a1b8b" name="Nmap.php" role="php" />
   </dir>
  </contents>
@@ -74,7 +82,9 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-03-07</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>Initial release.</notes>
+   <notes>
+Initial release.
+   </notes>
   </release>
   <release>
    <version>
@@ -87,10 +97,12 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-03-11</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>Revised release for PEAR Proposal.
+   <notes>
+Revised release for PEAR Proposal.
 - The escapeshellcmd() is used to escape all data that can be passed to the command line.
 - The $options (associative array) can be passed to the constructor to set runtime properties.
-- The __get and __set methods are used to set properties in the Service object.</notes>
+- The __get and __set methods are used to set properties in the Service object.
+   </notes>
   </release>
   <release>
    <version>
@@ -103,9 +115,11 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-03-13</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>Revised release for PEAR Proposal.
+   <notes>
+Revised release for PEAR Proposal.
 - Using PEAR_Exception instead of PEAR_Error
-- Fixed typo in the initialization of $_properties in the Service class</notes>
+- Fixed typo in the initialization of $_properties in the Service class
+   </notes>
   </release>
   <release>
    <version>
@@ -118,21 +132,23 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-03-31</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>- replaced is_null($foo) with $foo === null
+   <notes>
+- replaced is_null($foo) with $foo === null
 - use get and set method for the status property
 - renamed os() to getOS()
 - renamed allOS() to getAllOS()
 - use Exception instead of trigger_error in the Service class.
 - using visibility in all code.
 - Use System::which() to find the nmap binary instead of hardcoding the path into the class.
-- In the examples use count() instead of $object-&gt;count()
+- In the examples use count() instead of $object-count()
 - Use tempnam() instead of md5() in Nmap::scan() to avoid conflicts
 - In Parser.php a link to the nmap xml format docs was added.
 - The parser and the other classes are unit-tested
 - More Shell escaping in Nmap::_createCommandLine() (output file, target)
 - In Nmap::parseXMLOutput() the original PEAR_Error is passed to the exception
 - The package works now on windows
-- The failed to resolve hostnames/IPs are now reported.</notes>
+- The failed to resolve hostnames/IPs are now reported.
+   </notes>
   </release>
   <release>
    <version>
@@ -145,7 +161,9 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-04-15</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>Initial release</notes>
+   <notes>
+Initial release
+   </notes>
   </release>
   <release>
    <version>
@@ -158,10 +176,12 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-05-12</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>- Changed. By default nmap scan is performed without any parameters.
+   <notes>
+- Changed. By default nmap scan is performed without any parameters.
 - Added. The enableOptions() method to Nmap class to set Nmap parameters.
 - Changed. The Os detection flag was removed as option in the constructor.
-- Updated. Tests and examples.</notes>
+- Updated. Tests and examples.
+   </notes>
   </release>
   <release>
    <version>
@@ -174,7 +194,9 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2008-10-13</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>- Removed the @access tags not necessary in PHP5</notes>
+   <notes>
+- Removed the @access tags not necessary in PHP5
+   </notes>
   </release>
   <release>
    <version>
@@ -187,7 +209,25 @@ Nmap is available from http://nmap.org/</description>
    </stability>
    <date>2009-01-27</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
-   <notes>* Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt</notes>
+   <notes>
+* Changed PEAR dependency to 1.5.4. See http://pear.php.net/advisory-20070507.txt
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.2</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2009-06-16</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>
+- Fixed. #16268 OS Guess wrong Sort Order
+- Fixed. #16336 Error getting OS if the osmatch tag is not present in the XML
+   </notes>
   </release>
  </changelog>
 </package>
