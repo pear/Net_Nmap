@@ -179,12 +179,17 @@ class Net_Nmap_Host
     }
     
     /**
-     * Returns the name of discovered OS with the highest accuracy value.
+     * Returns the name of discovered OS with the highest accuracy value or
+     * the "Too many fingerprint" message if no OS is matched.
      * 
      * @return string
      */
     public function getOS()
     {
+        if (count($this->_os) == 0) {
+            $too_many_match = 'Too many fingerprints match this host to give specific OS details';
+            return $too_many_match;
+        }
         array_multisort($this->_os, SORT_DESC);
         return $this->_os[0]['name'];
     }
