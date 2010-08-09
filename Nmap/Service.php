@@ -70,9 +70,9 @@ class Net_Nmap_Service
      * @throws Net_Nmap_Exception If trying to get an undefined properties.
      * @return mixed The value of the object on success
      */
-    private function __get($key)
+    public function __get($key)
     {
-        if (key_exists($key, $this->_properties)) {
+        if (array_key_exists($key, $this->_properties)) {
             return $this->_properties[$key];
         } else {
             throw new Net_Nmap_Exception('Trying to get an undefined properties "' . 
@@ -92,9 +92,9 @@ class Net_Nmap_Service
      * @throws Net_Nmap_Exception If trying to set an undefined properties.
      * @return mixed True on success
      */
-    private function __set($key, $value)
+    public function __set($key, $value)
     {
-        if (key_exists($key, $this->_properties)) {
+        if (array_key_exists($key, $this->_properties)) {
             $this->_properties[$key] = $value;
             return true;
         } else {
