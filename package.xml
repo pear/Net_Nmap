@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.8.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
  <name>Net_Nmap</name>
  <channel>pear.php.net</channel>
  <summary>A simple wrapper class for the Nmap utility</summary>
@@ -17,10 +17,10 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2009-06-16</date>
- <time>22:54:16</time>
+ <date>2010-08-20</date>
+ <time>10:35:55</time>
  <version>
-  <release>1.0.2</release>
+  <release>1.0.3</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -29,8 +29,7 @@ Nmap is available from http://nmap.org/</description>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
  <notes>
-- Fixed. #16268 OS Guess wrong Sort Order
-- Fixed. #16336 Error getting OS if the osmatch tag is not present in the XML
+- Fixed. Bug #17669 typo: key_exists instead of array_key_exists (thanks to olleolleolle) 
  </notes>
  <contents>
   <dir baseinstalldir="Net" name="/">
@@ -42,9 +41,10 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="Net" md5sum="b3183c33dc2c8e3e9dc88e24a63c9670" name="Nmap/Exception.php" role="php" />
    <file baseinstalldir="Net" md5sum="e9d9b636fe13abe73c85edfa007aabf0" name="Nmap/Host.php" role="php" />
    <file baseinstalldir="Net" md5sum="160ac48fe8af0c6de3994187e5a79d4f" name="Nmap/Parser.php" role="php" />
-   <file baseinstalldir="Net" md5sum="0e8279f53ef903e56d7af08caded9923" name="Nmap/Service.php" role="php" />
+   <file baseinstalldir="Net" md5sum="921d620d1cbeef57b68084bffd1b481f" name="Nmap/Service.php" role="php" />
    <file baseinstalldir="Net" md5sum="324372b84a7e5c6296d4433daaa0b68a" name="tests/bug16268.xml" role="test" />
    <file baseinstalldir="Net" md5sum="c7c1c1a10df2b8c1a076121275e581e3" name="tests/Bug16268Test.php" role="test" />
+   <file baseinstalldir="Net" md5sum="3efacc7f8fc046185d9a6f4aed02bdfd" name="tests/bug16336.php" role="test" />
    <file baseinstalldir="Net" md5sum="589604fe60eee01bc25e7efd368451b0" name="tests/bug16336.xml" role="test" />
    <file baseinstalldir="Net" md5sum="5f34f9a5a797282fdab5bf2d943c8391" name="tests/Bug16336Test.php" role="test" />
    <file baseinstalldir="Net" md5sum="2009883fbca681f18650332f46f9d585" name="tests/NetNmapParseTest.php" role="test" />
@@ -227,6 +227,21 @@ Initial release
    <notes>
 - Fixed. #16268 OS Guess wrong Sort Order
 - Fixed. #16336 Error getting OS if the osmatch tag is not present in the XML
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.3</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2010-08-20</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>
+- Fixed. Bug #17669 typo: key_exists instead of array_key_exists (thanks to olleolleolle)
    </notes>
   </release>
  </changelog>
