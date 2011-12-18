@@ -26,8 +26,6 @@
  * @link      http://www.ortro.net
  */
 
-error_reporting(E_ALL);
-
 require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 
@@ -41,7 +39,7 @@ class NetNmapParseTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $nmap = new Net_Nmap();
-        $this->_hosts = $nmap->parseXMLOutput('NetNmapParseTest.xml');
+        $this->_hosts = $nmap->parseXMLOutput(dirname(__FILE__) . '/NetNmapParseTest.xml');
         $this->_host   = $this->_hosts[0];
         $this->_services = $this->_host->getServices();
     }
