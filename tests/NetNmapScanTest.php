@@ -26,8 +26,6 @@
  * @link      http://www.ortro.net
  */
 
-error_reporting(E_ALL);
-
 require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 require_once 'test_config.php';
@@ -39,6 +37,9 @@ class NetNmapScanTest extends PHPUnit_Framework_TestCase
     
     public function setUp()
     {
+        if (!defined('NMAP_BINARY')) {
+            $this->markTestSkipped("NMAP_BINARY is not defined - check your test_config");
+        }
         $this->_target = array('127.0.0.1');
     }
 
