@@ -257,4 +257,3 @@ class Net_Nmap
         }
     }
 }
-?>
