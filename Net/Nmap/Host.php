@@ -111,8 +111,10 @@ class Net_Nmap_Host
      */
     public function addAddress($type, $value)
     {
-        $this->_addresses = array_merge_recursive($this->_addresses, 
-                                                  array($type => array($value)));
+        $this->_addresses = array_merge_recursive(
+            $this->_addresses,
+            array($type => array($value))
+        );
     }
     
     /**
@@ -187,8 +189,7 @@ class Net_Nmap_Host
     public function getOS()
     {
         if (count($this->_os) == 0) {
-            $too_many_match = 'Too many fingerprints match this host to give specific OS details';
-            return $too_many_match;
+            return 'Too many fingerprints match this host to give specific OS details';
         }
         return $this->_os[0]['name'];
     }
@@ -226,4 +227,3 @@ class Net_Nmap_Host
         return $this->_status;
     }
 }
-?>

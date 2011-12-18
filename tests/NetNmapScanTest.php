@@ -26,11 +26,7 @@
  * @link      http://www.ortro.net
  */
 
-//Remove the comment below if you want test from source
-//set_include_path('../..'.PATH_SEPARATOR.get_include_path());
-error_reporting(E_ALL);
-
-require_once 'PHPUnit/Framework.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 require_once 'test_config.php';
 
@@ -41,6 +37,9 @@ class NetNmapScanTest extends PHPUnit_Framework_TestCase
     
     public function setUp()
     {
+        if (!defined('NMAP_BINARY')) {
+            $this->markTestSkipped("NMAP_BINARY is not defined - check your test_config");
+        }
         $this->_target = array('127.0.0.1');
     }
 
@@ -53,7 +52,6 @@ class NetNmapScanTest extends PHPUnit_Framework_TestCase
     {
         $nmap = new Net_Nmap();
         $nmap->enableOptions($GLOBALS['nmap_options']);
-        print_r($GLOBALS['nmap_options']);
         $res = $nmap->scan($this->_target);
         $this->assertEquals(true, $res);
     }
@@ -76,4 +74,3 @@ class NetNmapScanTest extends PHPUnit_Framework_TestCase
         //unlink(OUTPUT_FILE);
     }
 }
-?>

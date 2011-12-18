@@ -154,5 +154,3 @@ class Net_Nmap_Parser extends XML_Parser
     }
 }
 
-
-?>

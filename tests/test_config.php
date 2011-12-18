@@ -29,11 +29,15 @@
 //The values used in tests for the $option array 
 //define('OUTPUT_FILE', 'C:\testNmapSaveOutputFile1.xml');
 //define('NMAP_BINARY', 'C:\Programmi\Nmap\nmap.EXE');
-define('OUTPUT_FILE', '/tmp/testNmapSaveOutputFile1.xml');
-define('NMAP_BINARY', '/usr/local/bin/nmap');
+$nmap = exec('which nmap');
+
+if ($nmap) {
+    define('NMAP_BINARY', $nmap);
+}
+
+define('OUTPUT_FILE', sys_get_temp_dir() . '/testNmapSaveOutputFile1.xml');
+
 $nmap_options = array('os_detection' => true,
                       'service_info' => true,
                       'port_ranges' => 'U:53,111,137,T:21-25,80,139,8080',
-                      //'all_options' => true
                       );
-?>

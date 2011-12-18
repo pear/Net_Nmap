@@ -74,12 +74,12 @@ class Net_Nmap_Service
     {
         if (array_key_exists($key, $this->_properties)) {
             return $this->_properties[$key];
-        } else {
-            throw new Net_Nmap_Exception('Trying to get an undefined properties "' . 
-                                                                $key .
-                                                                '" for the object ' .
-                                                                __CLASS__);
         }
+
+        throw new Net_Nmap_Exception(
+            'Trying to get an undefined properties "' . 
+            $key . '" for the object ' . __CLASS__
+        );
     }
 
     /**
@@ -97,12 +97,11 @@ class Net_Nmap_Service
         if (array_key_exists($key, $this->_properties)) {
             $this->_properties[$key] = $value;
             return true;
-        } else {
-            throw new Net_Nmap_Exception('Trying to set an undefined properties "' . 
-                                                    $key .
-                                                    '" for the object ' .
-                                                    __CLASS__);
         }
+
+        throw new Net_Nmap_Exception(
+            'Trying to set an undefined properties "' . 
+            $key . '" for the object ' . __CLASS__
+        );
     }
 }
-?>
