@@ -25,10 +25,6 @@
  * @license   GNU/LGPL v2.1
  * @link      http://www.ortro.net
  */
-
-//Remove the comment below if you want test from source
-error_reporting(E_ALL);
-
 require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 
@@ -41,7 +37,7 @@ class Bug16336Test extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $nmap = new Net_Nmap();
-        $this->_hosts = $nmap->parseXMLOutput('bug16336.xml');
+        $this->_hosts = $nmap->parseXMLOutput(dirname(__FILE__) . '/bug16336.xml');
         $this->_host   = $this->_hosts[0];
     }
 
