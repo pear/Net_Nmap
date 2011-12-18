@@ -30,7 +30,7 @@
 //set_include_path('../..'.PATH_SEPARATOR.get_include_path());
 error_reporting(E_ALL);
 
-require_once 'PHPUnit/Framework.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 
 class Bug16268Test extends PHPUnit_Framework_TestCase
@@ -57,4 +57,3 @@ class Bug16268Test extends PHPUnit_Framework_TestCase
         $this->assertEquals('DEC VAX/VMS 5.3 on a MicroVAX II', $this->_host->getOS());
     }
 }
-?>

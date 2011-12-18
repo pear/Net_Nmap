@@ -26,11 +26,9 @@
  * @link      http://www.ortro.net
  */
 
-//Remove the comment below if you want test from source
-//set_include_path('../..'.PATH_SEPARATOR.get_include_path());
 error_reporting(E_ALL);
 
-require_once 'PHPUnit/Framework.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 require_once 'test_config.php';
 
@@ -76,4 +74,3 @@ class NetNmapScanTest extends PHPUnit_Framework_TestCase
         //unlink(OUTPUT_FILE);
     }
 }
-?>
