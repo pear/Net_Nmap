@@ -97,7 +97,6 @@ class Net_Nmap
      * @param array $options optional. An array of options used to create the
      *                       Nmap object. All options must be optional and are
      *                       represented as key-value pairs.
-     * 
      */
     public function __construct(array $options = array())
     {
@@ -159,9 +158,12 @@ class Net_Nmap
             throw new Net_Nmap_Exception(implode(' ', $out));
         } else {
             foreach ($out as $row) {
-                preg_match('@^Failed to resolve given hostname/IP:\s+(.+)\.\s+Note@',
-                           $row,
-                           $matches);
+                preg_match(
+                    '@^Failed to resolve given hostname/IP:\s+(.+)\.\s+Note@',
+                    $row,
+                    $matches
+                );
+
                 if (count($matches) > 0) {
                     $this->_failed_to_resolve[] = $matches[1];
                 }
@@ -257,4 +259,3 @@ class Net_Nmap
         }
     }
 }
-?>
