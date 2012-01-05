@@ -31,6 +31,7 @@
 require_once 'XML/Parser.php';
 require_once 'Net/Nmap/Host.php';
 require_once 'Net/Nmap/Service.php';
+require_once 'Net/Nmap/Stats.php';
 
 /**
  * Parses a Nmap XML output file
@@ -50,6 +51,12 @@ class Net_Nmap_Parser extends XML_Parser
      * @var ArrayIterator
      */
     private $_hosts;
+    
+    /**
+     * Nmap Stats object
+     * @var Net_Nmap_Stats
+     */
+    private $_stats;
      
     /**
      * start handler
@@ -63,6 +70,16 @@ class Net_Nmap_Parser extends XML_Parser
     public function startHandler($parser, $name, $attribs)
     {
         switch ($name) {
+        case 'nmaprun':
+            if (isset($this->_stats)) {
+                $this->_stats = new Net_Nmap_Stats();
+            }
+            $this->_stats->scanner = @$attribs['scanner'];
+            $this->_stats->args    = @$attribs['args'];
+            $this->_stats->version = @$attribs['version'];
+            $this->_stats->start   = @$attribs['start'];
+            $this->_stats->xmloutputversion = @$attribs['xmloutputversion'];
+            break;
         case 'host':
             if (!$this->_hosts instanceof ArrayIterator) {
                 $this->_hosts = new ArrayIterator();
@@ -99,6 +116,14 @@ class Net_Nmap_Parser extends XML_Parser
             break;
         case 'osmatch':
             $this->_host->addOS($attribs['accuracy'], $attribs['name']);
+            break;
+        case 'finished':
+            $this->_stats->finished = @$attribs['time'];
+            break;
+        case 'hosts':
+            $this->_stats->hosts_up     = @$attribs['up'];
+            $this->_stats->hosts_down   = @$attribs['down'];
+            $this->_stats->hosts_total  = @$attribs['total'];
             break;
         default:
             $this->currentTag = $name;
@@ -152,5 +177,14 @@ class Net_Nmap_Parser extends XML_Parser
     {
         return $this->_hosts;
     }
+    
+    /**
+     * Get Nmap Statistics
+     *
+     * @return Net_Nmap_Stats   Return an Nmap Stats Object
+     */
+    public function getStats()
+    {
+        return $this->_stats;
+    }
 }
-

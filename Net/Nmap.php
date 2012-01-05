@@ -64,7 +64,7 @@ class Net_Nmap
     /**
      * Delete Nmap output file after parsing
      *
-     * @var    string
+     * @var    bool
      */
     private $_delete_output_file = true;
     
@@ -82,6 +82,13 @@ class Net_Nmap
      * @link http://nmap.org/book/man-briefoptions.html
      */
     private $_nmap_options = array();
+    
+    /**
+     * Statistics object from Nmap scan
+     *
+     * @var Net_Nmap_Stats
+     */
+    private $_nmap_stats = null;
     
     /**
      * Creates a new Nmap object
@@ -118,7 +125,7 @@ class Net_Nmap
      * 
      * @return string
      */
-    private function _createCommandLine($targets)
+    protected function createCommandLine($targets)
     {
 
         if ($this->_output_file === null) {
@@ -143,16 +150,20 @@ class Net_Nmap
     /**
      * Scan the specified target 
      *
-     * @param array $targets Array contains hostnames, IP addresses, 
-     *                       networks to scan
+     * @param array $targets   Array contains hostnames, IP addresses, 
+     *                         networks to scan
+     * @param bool  $with_sudo Boolean to enable or not sudo scan
      * 
      * @return true | PEAR_Error
      * @throws Net_Nmap_Exception If Nmap binary does not exist or 
      *                            the command failed to execute.
      */
-    public function scan($targets)
+    public function scan($targets, $with_sudo = false)
     {        
-        exec($this->_createCommandLine($targets), $out, $ret_var);
+        $sudo = $with_sudo
+               ? 'sudo ' : '';
+                
+        exec($sudo . $this->createCommandLine($targets), $out, $ret_var);
 
         if ($ret_var > 0) {
             throw new Net_Nmap_Exception(implode(' ', $out));
@@ -198,6 +209,7 @@ class Net_Nmap
         if ($this->_delete_output_file) {
             unlink($this->_output_file);
         }
+        $this->_nmap_stats = $parse->getStats();
         return $parse->getHosts();
     }
     
@@ -209,6 +221,16 @@ class Net_Nmap
     public function getFailedToResolveHosts()
     {
         return $this->_failed_to_resolve;
+    }
+    
+    /**
+     * Get Nmap Statistics
+     *
+     * @return Net_Nmap_Stats   Return an Nmap Stats Object
+     */
+    public function getNmapStats()
+    {
+        return $this->_nmap_stats;
     }
     
     /**
