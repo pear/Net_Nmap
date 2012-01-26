@@ -29,7 +29,8 @@ Nmap is available from http://nmap.org/</description>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
  <notes>
-- note
+- Misc improvements to clean up the package, and make it easier to run tests (CloCkWeRX)
+- Added support for Nmap Statistics and other improvements (Thanks to BARRY Ibrahima)
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
