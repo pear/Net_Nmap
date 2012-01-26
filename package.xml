@@ -17,10 +17,10 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2011-12-18</date>
- <time>17:15:56</time>
+ <date>2012-01-26</date>
+ <time>11:47:29</time>
  <version>
-  <release>1.0.3</release>
+  <release>1.0.4</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -29,7 +29,7 @@ Nmap is available from http://nmap.org/</description>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
  <notes>
-- Fixed. Bug #17669 typo: key_exists instead of array_key_exists (thanks to olleolleolle)
+- note
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -38,20 +38,22 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="Net" md5sum="ef0012d21f92f805542a73e4bdadfdeb" name="examples/example1.php" role="data" />
    <file baseinstalldir="Net" md5sum="c2777cd5fc39894621d0db683d9c51cd" name="examples/example2.php" role="data" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="examples/example2.xml" role="doc" />
-   <file baseinstalldir="/" md5sum="12cdd6b00e76b5c0df397f344a2a1b8b" name="Net/Nmap.php" role="php" />
+   <file baseinstalldir="/" md5sum="f6d5a5bef0c3a97ee61b2e3a63df0011" name="Net/Nmap.php" role="php" />
    <file baseinstalldir="/" md5sum="b3183c33dc2c8e3e9dc88e24a63c9670" name="Net/Nmap/Exception.php" role="php" />
-   <file baseinstalldir="/" md5sum="e9d9b636fe13abe73c85edfa007aabf0" name="Net/Nmap/Host.php" role="php" />
-   <file baseinstalldir="/" md5sum="160ac48fe8af0c6de3994187e5a79d4f" name="Net/Nmap/Parser.php" role="php" />
-   <file baseinstalldir="/" md5sum="921d620d1cbeef57b68084bffd1b481f" name="Net/Nmap/Service.php" role="php" />
+   <file baseinstalldir="/" md5sum="0d750f5ccbd808cad3e908536c7c0c90" name="Net/Nmap/Host.php" role="php" />
+   <file baseinstalldir="/" md5sum="d88ce755071176f2de1f923aaf35aa5f" name="Net/Nmap/Parser.php" role="php" />
+   <file baseinstalldir="/" md5sum="b7698531976670aac6187302a6cabccc" name="Net/Nmap/Service.php" role="php" />
+   <file baseinstalldir="Net" md5sum="19e17540b30cd6982b96ce39ec727696" name="Net/Nmap/Stats.php" role="php" />
    <file baseinstalldir="Net" md5sum="324372b84a7e5c6296d4433daaa0b68a" name="tests/bug16268.xml" role="test" />
-   <file baseinstalldir="Net" md5sum="c7c1c1a10df2b8c1a076121275e581e3" name="tests/Bug16268Test.php" role="test" />
-   <file baseinstalldir="Net" md5sum="3efacc7f8fc046185d9a6f4aed02bdfd" name="tests/bug16336.php" role="test" />
+   <file baseinstalldir="Net" md5sum="007fa086af99131a31158fe147c7d6ab" name="tests/Bug16268Test.php" role="test" />
    <file baseinstalldir="Net" md5sum="589604fe60eee01bc25e7efd368451b0" name="tests/bug16336.xml" role="test" />
-   <file baseinstalldir="Net" md5sum="5f34f9a5a797282fdab5bf2d943c8391" name="tests/Bug16336Test.php" role="test" />
-   <file baseinstalldir="Net" md5sum="2009883fbca681f18650332f46f9d585" name="tests/NetNmapParseTest.php" role="test" />
+   <file baseinstalldir="Net" md5sum="e046d150d962cd295aea052c64aaf23a" name="tests/Bug16336Test.php" role="test" />
+   <file baseinstalldir="Net" md5sum="d0a5d8e6fbb1017f6a15bbd28e19f64b" name="tests/NetNmapParseTest.php" role="test" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="tests/NetNmapParseTest.xml" role="test" />
-   <file baseinstalldir="Net" md5sum="0b0b7cad6875a55140903794ef6bb72c" name="tests/NetNmapScanTest.php" role="test" />
-   <file baseinstalldir="Net" md5sum="0275854dd7278353fc56b5ab0aadcda7" name="tests/test_config.php" role="test" />
+   <file baseinstalldir="Net" md5sum="568873dec6a0223d16a1e0e6010658a3" name="tests/NetNmapScanTest.php" role="test" />
+   <file baseinstalldir="Net" md5sum="592bca9a4190bbcc5df53cc7a5ab9278" name="tests/test_config.php" role="test" />
+   <file baseinstalldir="Net" md5sum="ba6c69c9637220581bf4a0a9641dce7f" name="build.xml" role="data" />
+   <file baseinstalldir="Net" md5sum="a5b01e5a4d872162d6cdc4f9275b4100" name="phpunit.xml" role="data" />
    <file baseinstalldir="/" md5sum="992d42a83b7539fc8b17ac57be7b11f5" name="README" role="data" />
   </dir>
  </contents>
@@ -242,6 +244,22 @@ Initial release
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
    <notes>
 - Fixed. Bug #17669 typo: key_exists instead of array_key_exists (thanks to olleolleolle)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.4</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2012-01-26</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>
+- Misc improvements to clean up the package, and make it easier to run tests (CloCkWeRX)
+- Added support for Nmap Statistics and other improvements (Thanks to BARRY Ibrahima)
    </notes>
   </release>
  </changelog>
