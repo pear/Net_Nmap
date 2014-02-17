@@ -8,7 +8,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "Net_Nmap": "./"
+            "Net": "./"
         }
     },
     "description": "More info available on: http://pear.php.net/package/Net_Nmap",
@@ -23,7 +23,8 @@
     },
     "type": "library",
     "require": {
-        "pear/pear_exception": "*"
+        "pear/pear_exception": "*",
+        "pear/xml_parser": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
