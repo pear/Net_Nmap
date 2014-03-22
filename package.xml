@@ -17,8 +17,8 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2012-01-26</date>
- <time>11:47:29</time>
+ <date>2014-03-22</date>
+ <time>18:04:18</time>
  <version>
   <release>1.0.4</release>
   <api>1.0.0</api>
@@ -44,7 +44,7 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="/" md5sum="0d750f5ccbd808cad3e908536c7c0c90" name="Net/Nmap/Host.php" role="php" />
    <file baseinstalldir="/" md5sum="d88ce755071176f2de1f923aaf35aa5f" name="Net/Nmap/Parser.php" role="php" />
    <file baseinstalldir="/" md5sum="b7698531976670aac6187302a6cabccc" name="Net/Nmap/Service.php" role="php" />
-   <file baseinstalldir="Net" md5sum="19e17540b30cd6982b96ce39ec727696" name="Net/Nmap/Stats.php" role="php" />
+   <file baseinstalldir="/" md5sum="19e17540b30cd6982b96ce39ec727696" name="Net/Nmap/Stats.php" role="php" />
    <file baseinstalldir="Net" md5sum="324372b84a7e5c6296d4433daaa0b68a" name="tests/bug16268.xml" role="test" />
    <file baseinstalldir="Net" md5sum="007fa086af99131a31158fe147c7d6ab" name="tests/Bug16268Test.php" role="test" />
    <file baseinstalldir="Net" md5sum="589604fe60eee01bc25e7efd368451b0" name="tests/bug16336.xml" role="test" />
@@ -256,7 +256,7 @@ Initial release
     <release>stable</release>
     <api>stable</api>
    </stability>
-   <date>2012-01-26</date>
+   <date>2014-03-22</date>
    <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
    <notes>
 - Misc improvements to clean up the package, and make it easier to run tests (CloCkWeRX)
