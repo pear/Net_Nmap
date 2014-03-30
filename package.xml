@@ -17,10 +17,10 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2014-03-22</date>
- <time>18:04:18</time>
+ <date>2014-03-30</date>
+ <time>22:31:30</time>
  <version>
-  <release>1.0.4</release>
+  <release>1.0.5</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -29,8 +29,8 @@ Nmap is available from http://nmap.org/</description>
  </stability>
  <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
  <notes>
-- Misc improvements to clean up the package, and make it easier to run tests (CloCkWeRX)
-- Added support for Nmap Statistics and other improvements (Thanks to BARRY Ibrahima)
+QA release
+Bug #20224	PEAR package.xml incorrect entry for Stats.php
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -54,6 +54,7 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="Net" md5sum="568873dec6a0223d16a1e0e6010658a3" name="tests/NetNmapScanTest.php" role="test" />
    <file baseinstalldir="Net" md5sum="592bca9a4190bbcc5df53cc7a5ab9278" name="tests/test_config.php" role="test" />
    <file baseinstalldir="Net" md5sum="ba6c69c9637220581bf4a0a9641dce7f" name="build.xml" role="data" />
+   <file baseinstalldir="/" md5sum="bd8bdf3c8e7aa853ed6691ce9150de50" name="composer.json" role="data" />
    <file baseinstalldir="Net" md5sum="a5b01e5a4d872162d6cdc4f9275b4100" name="phpunit.xml" role="data" />
    <file baseinstalldir="/" md5sum="992d42a83b7539fc8b17ac57be7b11f5" name="README" role="data" />
   </dir>
@@ -261,6 +262,22 @@ Initial release
    <notes>
 - Misc improvements to clean up the package, and make it easier to run tests (CloCkWeRX)
 - Added support for Nmap Statistics and other improvements (Thanks to BARRY Ibrahima)
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.5</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2014-03-30</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.html">LGPL</license>
+   <notes>
+QA release
+Bug #20224	PEAR package.xml incorrect entry for Stats.php
    </notes>
   </release>
  </changelog>
