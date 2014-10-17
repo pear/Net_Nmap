@@ -280,4 +280,17 @@ class Net_Nmap
             $this->_nmap_options[] = '-A';
         }
     }
+	
+    /**
+     * Additional Nmap options
+     * 
+     * @param string $nmap_options Nmap additional command line options
+     * 
+     * @return void
+     * @link http://nmap.org/book/man-briefoptions.html
+     */
+    public function additionalOptions($nmap_options)
+    {
+        $this->_nmap_options[] = $nmap_options;
+    }
 }
