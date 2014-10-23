@@ -25,7 +25,6 @@
  * @license   GNU/LGPL v2.1
  * @link      http://www.ortro.net
  */
-require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 
 class Bug16268Test extends PHPUnit_Framework_TestCase

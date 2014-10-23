@@ -26,7 +26,6 @@
  * @link      http://www.ortro.net
  */
 
-require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 
 class NetNmapParseTest extends PHPUnit_Framework_TestCase

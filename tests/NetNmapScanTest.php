@@ -26,7 +26,6 @@
  * @link      http://www.ortro.net
  */
 
-require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/Nmap.php';
 require_once 'test_config.php';
 
