@@ -107,6 +107,7 @@ class Net_Nmap_Parser extends XML_Parser
             break;
         case 'state':
             $this->_service->state    = @$attribs['state'];
+            break;
         case 'service':
             $this->_service->name      = @$attribs['name'];
             $this->_service->product   = @$attribs['product'];
