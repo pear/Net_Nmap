@@ -105,13 +105,15 @@ class Net_Nmap_Parser extends XML_Parser
             $this->_service->protocol = @$attribs['protocol'];
             $this->_service->port     = @$attribs['portid'];
             break;
+        case 'state':
+            $this->_service->state    = @$attribs['state'];
         case 'service':
             $this->_service->name      = @$attribs['name'];
             $this->_service->product   = @$attribs['product'];
             $this->_service->version   = @$attribs['version'];
             $this->_service->extrainfo = @$attribs['extrainfo'];
             if (isset($attribs['ostype'])) {
-                $this->_host->addOS('0', $attribs['ostype']);                 
+                $this->_host->addOS('0', $attribs['ostype']);
             }
             break;
         case 'osmatch':
