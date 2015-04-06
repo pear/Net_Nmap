@@ -40,7 +40,8 @@ require_once 'Net/Nmap/Exception.php';
  * @property string $version   The version of the product running as service.
  * @property string $extrainfo The additional information about the product
  *                             running as service.
- * 
+ * @property string $state     Whether the port is open/closed
+ *
  * @category  Net
  * @package   Net_Nmap
  * @author    Luca Corbo <lucor@ortro.net>
@@ -60,13 +61,14 @@ class Net_Nmap_Service
                                                   'port' => null,
                                                   'name' => null,
                                                   'version'  => null,
-                                                  'extrainfo'  => null);
-    
+                                                  'extrainfo'  => null,
+                                                  'state' => null);
+
     /**
      * Overloading of the __get method
      *
      * @param string $key The name of the variable that should be retrieved
-     * 
+     *
      * @throws Net_Nmap_Exception If trying to get an undefined properties.
      * @return mixed The value of the object on success
      */
