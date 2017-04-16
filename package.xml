@@ -17,10 +17,10 @@ Nmap is available from http://nmap.org/</description>
   <email>lucor@ortro.net</email>
   <active>yes</active>
  </lead>
- <date>2014-03-22</date>
- <time>18:04:18</time>
+ <date>2014-10-16</date>
+ <time>20:20:00</time>
  <version>
-  <release>1.0.4</release>
+  <release>1.0.4cust2</release>
   <api>1.0.0</api>
  </version>
  <stability>
@@ -39,7 +39,7 @@ Nmap is available from http://nmap.org/</description>
    <file baseinstalldir="Net" md5sum="ef0012d21f92f805542a73e4bdadfdeb" name="examples/example1.php" role="data" />
    <file baseinstalldir="Net" md5sum="c2777cd5fc39894621d0db683d9c51cd" name="examples/example2.php" role="data" />
    <file baseinstalldir="Net" md5sum="18e069a87ebdd95a186af0b68293fba4" name="examples/example2.xml" role="doc" />
-   <file baseinstalldir="/" md5sum="f6d5a5bef0c3a97ee61b2e3a63df0011" name="Net/Nmap.php" role="php" />
+   <file baseinstalldir="/" md5sum="86626d0473e95b64dbb09c2a2cfef17c" name="Net/Nmap.php" role="php" />
    <file baseinstalldir="/" md5sum="b3183c33dc2c8e3e9dc88e24a63c9670" name="Net/Nmap/Exception.php" role="php" />
    <file baseinstalldir="/" md5sum="0d750f5ccbd808cad3e908536c7c0c90" name="Net/Nmap/Host.php" role="php" />
    <file baseinstalldir="/" md5sum="d88ce755071176f2de1f923aaf35aa5f" name="Net/Nmap/Parser.php" role="php" />
